@@ -1,0 +1,70 @@
+body {
+	word-break: break-word;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	transition: all 0.3s ease-in;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.section-padding {
+	padding: 100px 0;
+}
+
+.section-top-padding {
+	padding-top: 100px;
+}
+
+.section-bottom-padding {
+	padding-bottom: 100px;
+}
+
+.section-title {
+	font-size: 72px;
+	font-family: $font-family-gotham-bold;
+}
+
+.section-content {
+	font-size: 27px;
+	line-height: 35px;
+}
+
+main {
+	margin-top: 114px;
+
+	@include media-breakpoint-down(xl) {
+		margin-top: 91px;
+	}
+
+	@include media-breakpoint-down(lg) {
+		margin-top: 84px;
+	}
+
+	@include media-breakpoint-down(sm) {
+		margin-top: 74px;
+	}
+}
+
+@include media-breakpoint-down(lg) {
+	.section-title {
+		font-size: 36px;
+	}
+	.section-content {
+		font-size: 18px;
+		line-height: 26px;
+	}
+	.section-padding {
+		padding: 60px 0;
+	}
+	.section-top-padding {
+		padding-top: 60px;
+	}
+	.section-bottom-padding {
+		padding-bottom: 60px;
+	}
+}

@@ -1,0 +1,198 @@
+.hero {
+	&--img {
+		position: relative;
+		height: 750px;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+			/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#040404+0,040404+100&0+0,0.01+10,0.05+20,0.09+24,0.09+27,0.12+28,0.13+30,0.21+37,0.39+49,0.43+50,0.57+59,0.66+69,0.74+85,0.75+100 */
+			background: -moz-linear-gradient(top,  rgba(4,4,4,0) 0%, rgba(4,4,4,0.01) 10%, rgba(4,4,4,0.05) 20%, rgba(4,4,4,0.09) 24%, rgba(4,4,4,0.09) 27%, rgba(4,4,4,0.12) 28%, rgba(4,4,4,0.13) 30%, rgba(4,4,4,0.21) 37%, rgba(4,4,4,0.39) 49%, rgba(4,4,4,0.43) 50%, rgba(4,4,4,0.57) 59%, rgba(4,4,4,0.66) 69%, rgba(4,4,4,0.74) 85%, rgba(4,4,4,0.75) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top,  rgba(4,4,4,0) 0%,rgba(4,4,4,0.01) 10%,rgba(4,4,4,0.05) 20%,rgba(4,4,4,0.09) 24%,rgba(4,4,4,0.09) 27%,rgba(4,4,4,0.12) 28%,rgba(4,4,4,0.13) 30%,rgba(4,4,4,0.21) 37%,rgba(4,4,4,0.39) 49%,rgba(4,4,4,0.43) 50%,rgba(4,4,4,0.57) 59%,rgba(4,4,4,0.66) 69%,rgba(4,4,4,0.74) 85%,rgba(4,4,4,0.75) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom,  rgba(4,4,4,0) 0%,rgba(4,4,4,0.01) 10%,rgba(4,4,4,0.05) 20%,rgba(4,4,4,0.09) 24%,rgba(4,4,4,0.09) 27%,rgba(4,4,4,0.12) 28%,rgba(4,4,4,0.13) 30%,rgba(4,4,4,0.21) 37%,rgba(4,4,4,0.39) 49%,rgba(4,4,4,0.43) 50%,rgba(4,4,4,0.57) 59%,rgba(4,4,4,0.66) 69%,rgba(4,4,4,0.74) 85%,rgba(4,4,4,0.75) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00040404', endColorstr='#bf040404',GradientType=0 ); /* IE6-9 */
+		}
+
+		.hero--img-caption {
+			position: absolute;
+			color: $white;
+			bottom: 40px;
+			left: 30px;
+			right: 30px;
+			font-size: 46px;
+			z-index: 1;
+
+			.text-gradient {
+				font-family: $font-family-gotham-bold;
+				background: -webkit-linear-gradient(#fdcb27, #60c4ff);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+		}
+	}
+
+	&--content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		flex-direction: column;
+		padding: 30px 50px;
+
+		.hero--logo {
+			height: 85px;
+			margin-bottom: 10px;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
+		}
+
+		h4 {
+			font-family: $font-family-base;
+			font-size: 45px;
+			margin: 0;
+			line-height: 1.2;
+		}
+
+		h3 {
+			font-size: 48px;
+			line-height: 1;
+		}
+
+		.flat-variants {
+			display: grid;
+			grid-gap: 10px;
+			grid-template-columns: auto auto;
+			margin: 30px 0 20px;
+
+			> div {
+				border: 1px solid $primary;
+				padding: 5px 10px;
+
+				h4 {
+					color: $primary;
+				}
+
+				p {
+					font-size: 20px;
+					margin: 0;
+				}
+			}
+		}
+
+		.flat-location {
+			font-size: 26px;
+			color: #cf3438;
+			font-family: $font-family-gotham-bold;
+
+			span {
+				width: 26px;
+				display: inline-block;
+    			vertical-align: text-bottom;
+    			line-height: 1;
+			}
+		}
+
+		.flat-landmark {
+			font-family: $font-family-gotham-bold;
+		}
+
+		.feature-list {
+			li {
+				border: 1px solid $primary;
+				padding: 5px 10px;
+				margin: 5px 0;
+			}
+
+			&--lg {
+				font-size: 20px;
+				margin-bottom: 10px !important;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(xl) {
+	.hero {
+		&--img {
+			.hero--img-caption {
+				font-size: 30px;
+			}
+		}
+
+		&--content {
+			padding: 30px;
+
+			.hero--logo {
+				height: 50px;
+			}
+
+			h3,
+			h4 {
+				font-size: 30px;
+			}
+
+			.flat-variants {
+				> div {
+					p {
+						font-size: 18px;
+						margin: 0;
+					}
+				}
+			}
+
+			.flat-location {
+				font-size: 24px;
+
+				span {
+					width: 24px;
+				}
+			}
+
+			.feature-list {
+				&--lg {
+					font-size: 18px;
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(lg) {
+	.hero {
+		&--img {
+			height: 200px;
+
+			.hero--img-caption {
+				font-size: 20px;
+				bottom: 10px;
+				line-height: 1.5;
+			}
+		}
+		&--content {
+			padding: 60px 30px;
+
+			h3,
+			h4 {
+				font-size: 20px;
+			}
+
+			.flat-variants > div p,
+			.feature-list--lg {
+				font-size: 16px;
+			}
+		}
+	}
+}

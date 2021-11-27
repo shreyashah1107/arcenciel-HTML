@@ -1,0 +1,145 @@
+.house-tour-slider-wrapper {
+    position: relative;
+    margin: 0 auto;
+    perspective: 1000px;
+    height: 500px;
+    width: 400px;
+
+    .house-tour-slider {
+	    position: absolute;
+    	height: 500px;
+    	width: 400px;
+	    transform-style: preserve-3d;
+
+	    div {
+		    transform-style: preserve-3d;
+		}
+
+		.house-tour-slider--item {
+			display: flex;
+    		align-items: center;
+		    position: absolute;
+		    width: 400px;
+			background: $white;
+			border: 5px solid $white;
+		    transition: transform 1.2s;
+			overflow: hidden;
+
+			&:first-child {
+			    z-index: 10;
+			    transform: rotateY(0deg) translateX(0px);
+			}
+
+			&[data-position="2"] {
+			    z-index: 9;
+			    transform: rotateY(0deg) translateX(15%) scale(0.9);
+			}
+
+			&[data-position="3"] {
+			    z-index: 8;
+			    transform: rotateY(0deg) translateX(30%) scale(0.8);
+			}
+
+			.house-tour-slider--img {
+				width: 400px;
+    			height: 500px;
+
+				img {
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+				}
+			}
+
+			&:hover:not(:first-child) {
+			    cursor: pointer;
+			}
+		}
+    }
+
+	.tour-next,
+	.tour-prev {
+	    position: absolute;
+	    top: 50%;
+	    transform: translateY(-50%);
+	    right: 15px;
+	    height: 50px;
+	    width: 50px;
+	    padding: 10px;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    background-color: $black;
+	    border-radius: 50%;
+	    z-index: 10;
+	    cursor: pointer;
+	    transition: all 0.2s;
+
+	    img {
+	    	width: 100%;
+	    }
+
+	    &:hover {
+	    	background-color: $primary;
+	    }
+	}
+
+	.tour-prev {
+	    left: 15px;
+	}
+}
+
+@include media-breakpoint-only(lg) {
+	.house-tour-slider-wrapper,
+	.house-tour-slider-wrapper .house-tour-slider,
+	.house-tour-slider-wrapper .house-tour-slider .house-tour-slider--item,
+	.house-tour-slider-wrapper .house-tour-slider .house-tour-slider--item .house-tour-slider--img {
+		height: 450px;
+		width: 350px;
+	}
+}
+
+@include media-breakpoint-down(md) {
+	.house-tour-slider-wrapper,
+	.house-tour-slider-wrapper .house-tour-slider,
+	.house-tour-slider-wrapper .house-tour-slider .house-tour-slider--item,
+	.house-tour-slider-wrapper .house-tour-slider .house-tour-slider--item .house-tour-slider--img {
+		height: 250px;
+		width: 100%;
+	}
+
+	.house-tour-slider-wrapper {
+		.tour-nav-wrapper {
+			display: grid;
+			align-items: center;
+			justify-content: center;
+			grid-gap: 10px;
+			grid-template-columns: auto auto;
+			padding-top: 10px;
+
+			.tour-next,
+			.tour-prev {
+				width: 30px;
+				height: 30px;
+				padding: 5px;
+				position: static;
+				transform: none;
+			}
+		}
+
+		.house-tour-slider {
+			position: relative;
+			width: calc(100% - 8%);
+
+			.house-tour-slider--item {
+				&[data-position="2"] {
+				    transform: rotateY(0deg) translateX(8%) scale(0.9);
+				}
+
+				&[data-position="3"] {
+				    transform: rotateY(0deg) translateX(16%) scale(0.8);
+				}
+			}
+		}
+	}
+}

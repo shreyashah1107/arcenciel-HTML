@@ -1,0 +1,53 @@
+.btn {
+    font-family: $font-family-gotham-medium;
+    line-height: 1.1;
+    transition: all 0.3s ease-in;
+
+    &.btn-primary {
+        font-size: 28px;
+        color: $white;
+        padding: 20px 15px;
+        border-radius: 0;
+        font-family: $font-family-base;
+
+        &:hover {
+            background-color: $body-color;
+            border-color: $body-color;
+        }
+
+        &.is-rounded {
+            font-size: 20px;
+            font-family: $font-family-gotham-medium;
+            padding: 20px 40px;
+            border-radius: 18px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+    }
+    
+    &.btn-body {
+        color: $white;
+        background-color: $body-color;
+        border-color: $body-color;
+        border-radius: 0;
+        font-size: 23px;
+        padding: 10px 20px;
+
+        &:hover {
+            background-color: $primary;
+            border-color: $primary;
+        }
+    }
+
+    @include media-breakpoint-down(lg) {
+        &.btn-primary,
+        &.btn-primary.is-rounded,
+        &.btn-body {        
+            font-size: 18px;
+        }
+
+        &.btn-primary.is-rounded {
+            padding: 20px 25px;
+        }
+    }
+}

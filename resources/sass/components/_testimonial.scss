@@ -1,0 +1,134 @@
+.card-testimonials {
+	background-color: #e8e4db;
+	padding: 100px;
+
+	&--body {
+		display: flex;
+		align-items: center;
+		position: relative;
+		padding: 80px 50px;
+		background-color: $white;
+
+		.card-testimonials--content {
+			font-size: 24px;
+			line-height: 1.2;
+			text-align: right;
+
+			.customer-name {
+				font-family: $font-family-gotham-bold;
+				text-transform: uppercase;
+				margin-top: 25px;
+			}
+		}
+
+		.card-testimonials--img {
+			position: relative;
+			margin-left: 40px;
+			flex: 0 0 400px;
+
+			img {
+				max-width: 100%;
+			}
+
+			&:before {
+				content: "";
+			    position: absolute;
+			    right: 0;
+			    top: -40px;
+			    width: 90%;
+			    height: 100%;
+			    background-color: transparent;
+			    border: 17px solid #cfc8b5;
+			    border-left: 0;
+			    border-bottom: 0;
+			}
+		}
+
+		&:before {
+			content: "";
+		    position: absolute;
+		    left: -17px;
+		    top: -17px;
+		    width: 70%;
+		    height: calc(100% + 34px);
+		    background-color: transparent;
+		    border: 17px solid #cfc8b5;
+		    border-right: 0;
+		}
+	}
+}
+
+@include media-breakpoint-down(xl) {
+	.card-testimonials {
+		padding: 50px;
+
+		&--body {
+			padding: 50px;
+
+			.card-testimonials--content {
+				font-size: 18px;
+				line-height: 22px;
+			}
+
+			.card-testimonials--img {
+				flex: 0 0 200px;
+
+				&:before {
+					right: -30px;
+    				top: -30px;
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(lg) {
+	.card-testimonials {
+		padding: 40px;
+
+		&--body {
+			flex-direction: column-reverse;
+		}
+
+		.card-testimonials--img {
+			margin-left: auto;
+			margin-top: 20px;
+			margin-bottom: 30px;
+
+			img {
+				max-height: 200px;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(md) {
+	.card-testimonials {
+		padding: 20px;
+
+		&--body {
+			padding: 20px;
+
+			.card-testimonials--content {
+				font-size: 16px;
+				line-height: 20px;
+				text-align: center;
+				margin-top: 20px;
+			}
+
+			.card-testimonials--img {
+				margin: 0 auto;
+				flex: auto;
+
+				img {
+					max-height: 100px;
+				}
+			}
+
+			&:before,
+			.card-testimonials--img:before {
+				display: none;
+			}
+		}
+	}
+}
